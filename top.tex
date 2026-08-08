@@ -1,0 +1,60 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc}
+
+\begin{document}
+\begin{tikzpicture}[x=2cm,y=2cm]%[line width=0.8pt]
+
+% ---------- Parameters of the drawing ----------
+\def\OuterSquareLength{2} % Side length of the outer square
+\def\CircleRadius{0.55} % Radius of the cylinder circle
+\def\nTeeth{20} % Number of teeth
+\def\ToothRadius{0.35} % Radius of the (invisible) inner circle on which all ends of teeth lie
+
+% ---------- Derived parameters of the drawing ----------
+\pgfmathsetmacro{\ToothAngle}{360/\nTeeth}
+\pgfmathsetmacro{\LastToothAngle}{360-\ToothAngle}
+\coordinate (circle-mid) at (\OuterSquareLength/2, \OuterSquareLength/2);
+
+% ---------- Shifts for dimensioning ----------
+\def\OuterSquareDimYShift{0.1}
+\def\InnerSquareDimXShift{0.05}
+\def\InnerSquareDimYShift{-0.05}
+
+% ---------- Labels ----------
+\def\OuterSquareLabel{$ S_2 $}
+\def\InnerSquareLabel{$ S_1 $}
+\def\DiameterLabel{$ D $}
+
+% ---------- Colours ----------
+\colorlet{outerfill}{black!20}
+\colorlet{innerfill}{brown!20}
+\colorlet{circle-colour}{black}
+
+% ---------- Drawing ----------
+% Outer square
+\draw[fill=outerfill] (0,0) rectangle (\OuterSquareLength, \OuterSquareLength);
+% Inner square
+\draw[fill=innerfill] (\OuterSquareLength/2, 0) -- (\OuterSquareLength, \OuterSquareLength/2) -- (\OuterSquareLength/2, \OuterSquareLength) -- (0, \OuterSquareLength/2) -- cycle;
+% Teeth
+\pgfmathsetmacro{\LastNumber}{\nTeeth-1}
+\foreach \x in {0, 1, ..., \LastNumber}{
+	\pgfmathsetmacro{\StartAngle}{\x*\ToothAngle}
+	\pgfmathsetmacro{\MidAngle}{(\x+0.5)*\ToothAngle}
+	\pgfmathsetmacro{\EndAngle}{(\x+1)*\ToothAngle}
+	
+	\draw[fill=outerfill, shift=(circle-mid)] (\StartAngle:\CircleRadius) arc[start angle=\StartAngle, end angle=\EndAngle, radius=\CircleRadius] -- (\MidAngle:\ToothRadius) -- cycle;
+}
+% Circle
+\draw[thick, circle-colour] (circle-mid) circle[radius=\CircleRadius];
+
+% ---------- Dimensioning ----------
+% Outer square
+\draw[<->, shift={(0,-\OuterSquareDimYShift)}] (0,0) -- (\OuterSquareLength,0) node[midway,below]{\OuterSquareLabel};
+% Inner square
+\draw[<->, shift={(\InnerSquareDimXShift, \InnerSquareDimYShift)}] (\OuterSquareLength/2, 0) -- (\OuterSquareLength, \OuterSquareLength/2) node[midway, below right]{\InnerSquareLabel};
+% Diameter
+\draw[<->, shift=(circle-mid)] (-\CircleRadius,0) -- (\CircleRadius,0) node[midway,below]{\DiameterLabel};
+
+\end{tikzpicture}
+\end{document}
