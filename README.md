@@ -1,4 +1,4 @@
-Crafting mnaual for a Doktorhut by AGAG Kaiserslautern (Department of Mathematics).
+Crafting manual for a Doktorhut by AGAG Kaiserslautern (Department of Mathematics).
 
 Adapted from the following original manual: https://jura.uni-koeln.de/fileadmin/institute/versicherungsrecht/Promotionen/Doktorhut.pdf
 
