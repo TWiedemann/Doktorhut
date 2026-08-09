@@ -1,0 +1,121 @@
+% !TeX spellcheck=en_GB
+\documentclass[a4paper,10pt]{article}
+%\usepackage{setspace}
+\usepackage{parskip}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{csquotes}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage[shortlabels]{enumitem}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{hyperref}
+\geometry{margin=2.5cm}
+
+% Platzhalter fuer spaeter einzufuegende Abbildungen
+\newcommand{\Platzhalter}[2][8cm]{%
+  \begin{center}
+  \fbox{\begin{minipage}[c][#1][c]{0.7\textwidth}
+    \centering \itshape #2
+  \end{minipage}}
+  \end{center}
+}
+
+\title{Crafting manual for a Doktorhut (AGAG Kaiserslautern)}
+\author{\footnotesize Adapted from:\\\footnotesize\url{https://jura.uni-koeln.de/fileadmin/institute/versicherungsrecht/Promotionen/Doktorhut.pdf}}
+\date{\today}
+
+%\setstretch{0.9}
+\setlist{itemsep=0pt, topsep=3pt}
+
+\begin{document}
+	\maketitle
+	
+	\section*{General description of the hat}
+	
+	The hat consists of two parts (see also Figure~\ref{fig:side}): A cylinder of circumference $ C $, diameter $ D=C/\pi $ and height $ H $, and a top square of side length $ S_1 $. The circumference $ C $ coincides with the circumference of the PhD student's hat, which should be measured. We have cardboard rings of different sizes to help with this. All other dimensions of the hat that are used below ($ H $, $ D $, $ S_1 $, $ S_2 $, $ T $, $ H' $, $ C' $) can be computed from this value using \texttt{Doktorhut\_Dimensions.ods}, and they are also explained there.
+	
+	\begin{figure}[htb]
+		\input{top}
+		\caption{Illustrations.}
+	\end{figure}
+	
+%	\section*{Measurements to take}
+%	
+%	The circumference $ C $ of the hat of the PhD student (usually $ 60 \text{cm} \pm 3 \text{cm} $) should be measured. We have cardboard rings of different sizes to help with this. All other dimensions ($ H $, $ D $, $ S_1 $, $ S_2 $, $ T $, $ H' $, $ C' $) can be computed from this value using \texttt{Doktorhut\_Dimensions.ods}, though the PhD student might have a different preference for the height $ H $ of the hat.
+	
+
+	
+	\section*{Required Materials}
+	
+	\begin{enumerate}[(1)]
+		\item Thick black paper (we normally use \enquote{Fotokarton 50x70 schwarz} from McPaper, the thickness is probably 300$ \text{g}/\text{cm}^2 $):
+		\begin{enumerate}[label=(1.\alph*)]
+			\item\label{black-cyl} A rectangle of size $ C' \times H' $ for the cylinder.
+			\item\label{black-square} A square of size $ S_2 \times S_2 $ for the top.
+		\end{enumerate}
+		
+		\item\label{cardboard} A thick cardboard square of size $ S_1 \times S_1 $ around which black cardboard will be wrapped. This square will not be visible in the end, so it can be ugly: Cardboard from a large package works. It is important that the cardboard is thick enough, like $ 0.5\text{cm} $.
+		
+		\item A cord for the tassel (\enquote{Quaste}).
+		
+		\item Liquid glue and scissors.
+	\end{enumerate}
+	
+	\section*{Top}
+	
+	The top consists of the thick cardboard square~\ref{cardboard}, around which the black paper~\ref{black-square} is wrapped.
+	
+	\begin{enumerate}[(a)]
+		\item Put liquid glue on the middle of~\ref{black-square} and glue it on top of~\ref{cardboard}, as in Figure~\ref{fig:squares}. (The black square is actually slightly larger than the picture suggests.)
+		
+		\item Put liquid glue on the four black triangles which overlap the cardboard, fold them around the cardboard, and glue them onto the cardboard. The cardboard should now be completely covered by black paper. (The side length $ S_2 $ of the black paper is chosen precisely to ensure that the tips of the four triangles meet in the middle of the cardboard, taking into account the thickness of the cardboard.)
+		
+		\item Put a heavy object onto the top to ensure that it does not deform while the glue dries.
+	\end{enumerate}
+	
+	\section*{Cylinder}
+	
+	Cut out the shape in Figure~\ref{fig:cylinder} from the black rectangle~\ref{black-cyl}. (The angles in the figure are merely approximations and do not have to be considered.) This shape consists of the following parts:
+	\begin{itemize}
+		\item A big rectangle of size $ C \times H $ which will ultimately form the cylinder.
+		
+		\item A flap below the big rectangle which increases stability.
+		
+		\item A gluing flap on the left of the rectangle.
+		
+		\item Teeth above the rectangle which will be used to glue together the cylinder and the top. The precise number of teeth, as well as their width $ T $, depends on the head circumference $ C $.
+	\end{itemize}
+	
+	Now glue the left flap onto the right-hand side of the big rectangle to obtain a cylinder.
+	
+	\begin{figure}[htb]
+		\centering\input{cylinder}
+		\caption{The shape to cut out from~\ref{black-cyl} for the cylinder.}
+		\label{fig:cylinder}
+	\end{figure}
+
+	\section*{Combining top and cylinder}
+	
+	\begin{enumerate}[(a)]
+		\item Fold the teeth to the inner side of the cylinder and glue them to the top.
+		
+		\item Put a heavy object into the cylinder to ensure that it does not deform while the glue dries.
+	\end{enumerate}
+
+\section*{Quaste}
+
+Die Quaste (engl. \emph{Tassel}) stellt man am einfachsten aus einer Kordel
+her. Das untere Ende der Kordel wird aufgeribbelt. Um zu verhindern, dass die
+gesamte Kordel aufribbelt, wird ein schmaler Streifen Klebeband oder Nadel
+und Faden benutzt. Die Kordel wird nun durch ein mittig in den Deckel
+gestochenes Loch gezogen. Eine Büroklammer oder ein Streichholz durch das
+durchgesteckte Ende gezogen fixiert die Kordel am Deckel.
+
+Zu guter Letzt kann in die hintere Ecke des Deckels eine Kerbe geschnitten
+werden, um einen konstanten Hang der Kordel zu erreichen.
+
+\end{document}

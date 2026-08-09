@@ -1,18 +1,17 @@
-\documentclass[tikz,border=10pt]{standalone}
-\usepackage{tikz}
-\usetikzlibrary{arrows.meta,calc}
-
-\begin{document}
+%\documentclass[tikz,border=10pt]{standalone}
+%\usepackage{tikz}
+%\usetikzlibrary{calc}
+%\begin{document}
 \begin{tikzpicture}[line width=0.8pt]
 
 % ---------- Parameters of the drawing ----------
 % Dimensions of the drawing
-\def\CylHeight{4.5}          % Height H of the cylinder
-\def\LowerFlapHeight{1.2}          % Height of the lower flap
+\def\CylHeight{2.5}          % Height H of the cylinder
+\def\LowerFlapHeight{0.5}          % Height of the lower flap
 \def\nTeeth{11}       % Total number of teeth
-\def\ToothHeight{1.4}           % Height of a tooth
+\def\ToothHeight{1}           % Height of a tooth
 \def\ToothWidth{0.75}  % Width of a tooth
-\def\LeftFlapWidth{1.6}          % Width of the left flap
+\def\LeftFlapWidth{1.1}          % Width of the left flap
 \def\LeftFlapHeightShorten{0.8}  % Amount by which the height of the left flap is shortened relative to the height of the cylinder
 
 % Distance to dimensioning labels
@@ -29,8 +28,8 @@
 \def\LeftFlapAngleLabelYShift{0.5}
 
 % Angle label on the teeth
-\def\ToothAngleRadius{1.3}
-\def\ToothAngleLabelYShift{1}
+\def\ToothAngleRadius{0.9}
+\def\ToothAngleLabelYShift{0.7}
 
 % ---------- Derived parameters of the drawing ----------
 \pgfmathsetmacro{\RectangleWidth}{\nTeeth*\ToothWidth} % Circumference C of the head of the PhD student
@@ -122,7 +121,5 @@
 	
 	\node[font=\footnotesize] at ($ (base) + (0,\ToothAngleLabelYShift) $){\ToothAngleLabel};
 \end{scope}
-
-
 \end{tikzpicture}
-\end{document}
+%\end{document}
