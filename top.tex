@@ -32,7 +32,8 @@
 	\label{fig:side}
 \end{subfigure}%
 % ---------- Parameters of the following two drawings ----------
-\def\OuterSquareLength{2}% Side length of the outer square
+\def\OuterSquarePad{0.075} % Distance between the outer square and the inner square
+\def\OuterSquareLength{2}% Side length of the outer square is \OuterSquareLength+\OuterSquarePad
 \def\CircleRadius{0.55}% Radius of the cylinder circle
 \def\nTeeth{20}% Number of teeth
 \def\ToothRadius{0.35} % Radius of the (invisible) inner circle on which all ends of teeth lie
@@ -52,13 +53,13 @@
 		\coordinate (circle-mid) at (\OuterSquareLength/2, \OuterSquareLength/2);
 		
 		% Outer square
-		\draw[fill=hat-colour] (0,0) rectangle (\OuterSquareLength, \OuterSquareLength);
+		\draw[fill=hat-colour] (-\OuterSquarePad,-\OuterSquarePad) rectangle (\OuterSquareLength+\OuterSquarePad, \OuterSquareLength+\OuterSquarePad);
 		% Inner square
 		\draw[fill=cardboard-colour] (\OuterSquareLength/2, 0) -- (\OuterSquareLength, \OuterSquareLength/2) -- (\OuterSquareLength/2, \OuterSquareLength) -- (0, \OuterSquareLength/2) -- cycle;
 		
 		% ---------- Dimensioning ----------
 		% Outer square
-		\draw[<->, shift={(0,-\OuterSquareDimYShift)}] (0,0) -- (\OuterSquareLength,0) node[midway,below]{\OuterSquareLabel};
+		\draw[<->, shift={(-\OuterSquarePad,-\OuterSquarePad-\OuterSquareDimYShift)}] (0,0) -- (\OuterSquareLength+2*\OuterSquarePad,0) node[midway,below]{\OuterSquareLabel};
 		% Inner square
 		\draw[<->, shift={(\InnerSquareDimXShift, \InnerSquareDimYShift)}] (\OuterSquareLength/2, 0) -- (\OuterSquareLength, \OuterSquareLength/2) node[midway, below right]{\InnerSquareLabel};
 	\end{tikzpicture}%
