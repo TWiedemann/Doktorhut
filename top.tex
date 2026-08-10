@@ -50,8 +50,8 @@
 \def\DiameterLabel{$ D $}
 \begin{subfigure}{0.3\textwidth}%
 	\centering\begin{tikzpicture}[x=2cm,y=2cm]
-		\coordinate (circle-mid) at (\OuterSquareLength/2, \OuterSquareLength/2);
-		
+		\coordinate (circle-mid) at (\OuterSquareLength/2, \OuterSquareLength/2); % In retrospect, it would have been better to choose this midpoint as (0,0)
+		% (0,0) is the lower left corner of the outer square if \OuterSquarePad=0, and otherwise the lower left corner is slightly below left of (0,0)
 		% Outer square
 		\draw[fill=hat-colour] (-\OuterSquarePad,-\OuterSquarePad) rectangle (\OuterSquareLength+\OuterSquarePad, \OuterSquareLength+\OuterSquarePad);
 		% Inner square
@@ -69,7 +69,7 @@
 \begin{subfigure}{0.33\textwidth}
 	\centering\begin{tikzpicture}[x=2cm,y=2cm]%[line width=0.8pt]
 		\coordinate (circle-mid) at (\OuterSquareLength/2, \OuterSquareLength/2);
-		
+		% Coordinates as in the figure above
 		% Inner square
 		\draw[fill=hat-colour] (\OuterSquareLength/2, 0) -- (\OuterSquareLength, \OuterSquareLength/2) -- (\OuterSquareLength/2, \OuterSquareLength) -- (0, \OuterSquareLength/2) -- cycle;
 		% Teeth
