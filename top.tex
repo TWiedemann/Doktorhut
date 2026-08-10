@@ -21,10 +21,8 @@
 		\coordinate (LL) at (-\CylLength, -\CylHeigth);
 		\coordinate (LR) at (\CylLength, -\CylHeigth);
 		% Draw hat
-		\begin{scope}[hat-colour]
-			\draw[line width=3] (ULL) -- (URR);
-			\draw[fill] (UL) -- (UR) -- (LR) -- (LL) -- cycle;
-		\end{scope}
+		\draw[thick, fill=hat-colour] (UL) -- (UR) -- (LR) -- (LL) -- cycle;
+		\draw[line width=1] (ULL) -- (URR);
 		% Draw dimensioning
 		\draw[<->] ($ (ULL) + (0,\ShiftY) $) -- ($ (URR) + (0,\ShiftY) $) node[midway, above]{$ S_1 $};
 		\draw[<->] ($ (LL) + (0,-\ShiftY) $) -- ($ (LR) + (0,-\ShiftY) $) node[midway, below]{$ D $};
